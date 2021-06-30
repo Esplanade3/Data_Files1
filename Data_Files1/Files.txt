@@ -1,0 +1,9 @@
+File Path: - /work/Data_Files1/
+
+    Layer_IR1_1.shp: modified county-level shapefile of contiguous US - contains data for Incidence rate for Peak 1 (03/01/20 - 04/30/20) and all age cohort and comorbidity variables.  Number of observations (counties): 2807
+
+    Layer_IR2_1.shp: modified county-level shapefile of contiguous US - contains data for Incidence Rate for Peak 2 (06/01/20 - 07/31/20) and all age cohort and comorbidity variables.  Number of observations (counties): 3061
+
+    IR1_table.csv: CSV table containing Dependent Variable - Incidence rate for Peak 1 (03/01/20 - 04/30/20) and all age cohort and comorbidity variables.  Number of observations (counties): 2807
+
+    IR2_table.csv: CSV table containing Dependent Variable - Incidence Rate for Peak 2 (06/01/20 - 07/31/20) and all age cohort and comorbidity variables.  Number of observations (counties): 3061

@@ -1,0 +1,60 @@
+Variable Descriptions - included in the GWR analysis
+
+Dependent Variables: 
+       IR1_log  -  Log transformed covid-19 incidence rates for peak period 1 (03/01/20 - 04/30/20)
+       IR2_log  -  Log transformed covid-19 incidence rates for peak period 2 (06/01/20 - 07/31/20)
+       
+Predictors:
+        PCT_50to74  - Percent population aged 50 - 74
+        PCT_over75  - Percent population aged 75 and above
+        DIAB_PCT  - Percent population diagnosed with diabetes
+        CARDIO_MR  - Heart disease mortality rate – number of deaths per 100,000 of population
+        OBESE_PCT  - Percent adult population with diagnosed obesity
+
+Geography/Geometry:
+        X  -  X coordinate of geographic centroid of spatial feature (county) in meters
+        Y  -  Y coordinate of geographic centroid of spatial feature (county) in meters
+
+Projection:
+        USA Contiguous Equidistant Conic Projection
+        Linear Unit: Meters
+
+
+Other Variables - not directly referenced in the code sample or not included in the analysis
+        CTY_FIPS; countyFIPS  -  County Fips code
+        CountyName  -  County name
+        State  -  State abbreviation
+        population - population count by county
+        NEW_DTH_PD1  -  number of new death counts from covid-19 during peak period 1 (03/01/20 - 04/30/20)
+        NEW_DTH_PD2  -  number of new death counts from covid-19 during peak period 2 (06/01/20 - 07/31/20) 
+        NEW_CASE_PD1 -  number of new case counts from covid-19 during peak period 1 (03/01/20 - 04/30/20)
+        NEW_CASE_PD2 -  number of new case counts from covid-19 during peak period 2 (06/01/20 - 07/31/20)
+        DR1  -  Death-Case ratio for peak period 1 (03/01/20 - 04/30/20)**
+        DR2  -  Death-Case ratio for peak period 2 (06/01/20 - 07/31/20)**
+        IR1 - Incidence rate for peak period 1 (03/01/20 - 04/30/20)*
+        IR2  -  Incidence rate for peak period 2 (06/01/20 - 07/31/20)*
+        PCT_0to19  -  Percent population aged 0 - 19
+        PCT_20to34 -  Percent population aged 20 - 34
+        PCT_35to49 - Percent population aged 35 - 49
+        INTPTLAT - Latitudinal coordinate of geographic centroid of spatial feature in decimal degrees
+        INTPTLON - Longitudinal coordinate of geographic centroid of spatial feature in decimal degrees
+        Shape_Length - perimeter of polygon boundary of spatial feature (county) in meters
+        Shape_Area - areal extent of polygon of spatial feature (county) in square meters
+        
+Equations:
+    
+       *Incidence Rate = (Number of New Cases during a specified time period / Total County Population) x 100,000
+        
+        **Death-Case Ratio = (Number of New Deaths during a specified time period / Number of New Cases during that same time period) x 100
+
+Data Sources:
+
+        American Community Survey 2018 5-year estimates - age cohorts - https://www.census.gov 
+        Centers for Disease Control and Prevention (CDC) / Behavioral Risk Factor Surveillance System (BRFSS) - diabetes and obesity
+        https://gis.cdc.gov/grasp/diabetes/DiabetesAtlas.html#
+        Centers for Disease Control and Prevention (CDC) - heart disease mortality - https://wonder.cdc.gov/
+        USAFacts - raw case and death counts of covid-19 - https://usafacts.org/
+
+
+        
+    
