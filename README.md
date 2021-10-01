@@ -1,7 +1,7 @@
-**Examining Local Relationships between Age and Underlying Conditions on COVID-19 Incidence **
+Examining Local Relationships between Age and Underlying Conditions on COVID-19 Incidence
 
-**Data and Computational Steps
-**
+Data and Computational Steps
+
 
 Prepared by: Naomi W. Lazarus, PhD
 
