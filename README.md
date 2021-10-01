@@ -1,11 +1,12 @@
-Examining Local Relationships between Age and Underlying Conditions on COVID-19 Incidence 
-Data and Computational Steps
+**Examining Local Relationships between Age and Underlying Conditions on COVID-19 Incidence 
+Data and Computational Steps**
 Prepared by: Naomi W. Lazarus, PhD
 August 20th, 2021
 
-A. Introduction
+**A. Introduction**
 A county-level assessment of COVID-19 in relation to age demographics and comorbidities is carried out to provide context to the emerging hotspots of the virus during the early stages of the pandemic.  The two peak periods under investigation were 03/01/20 - 04/30/20 and 06/01/20 - 07/31/20.  The spatial relationships between coronavirus, age, and comorbidities is examined using geographically weighted regression (GWR).  COVID-19 incidence rate and death-case ratio function as the dependent variables. The independent variables include percent population in age cohorts 50 – 74 and above 75, heart disease mortality, diabetes, and obesity.  Data and methodological challenges in defining the GWR model had to be addressed in the interests of reproducibility and transparency.
-B.  Data Sources
+
+**B.  Data Sources**
 Variable Definition	Source
 COVID-19 case and death counts	USAFacts.org
 https://usafacts.org/visualizations/coronavirus-covid-19-spread-map/ 
@@ -24,67 +25,56 @@ Percent adult population with diagnosed obesity	Centers for Disease Control and 
 https://gis.cdc.gov/grasp/diabetes/DiabetesAtlas.html#
 
 
-C.  Dependent Variables
+**C.  Dependent Variables**
 Incidence Rates during peak period 1  (03/01/20 to 04/30/20)
 Incidence Rates during peak period 2  (06/01/20 to 07/31/20)
-Death-case ratios during peak period 1
-Death-case ratios during peak period 2
+
 Calculation of Incidence rates:
 New covid cases during the first peak – 03/01/20 to 04/30/20 was obtained by subtracting value in 03/01/20 from 04/30/20.  Use incidence rate formula to calculate the rate. 
 New covid cases during the second peak – 06/01/20 to 07/31/20 was obtained by subtracting value in 06/01/20 from 07/31/20. Use incidence rate formula to calculate the rate. 
 
 Incidence Rate = (Number of New Cases during a specified time period)/(Total County Population)  x 100,000
-Calculation of Death-case ratios: 
-New covid deaths during the first peak – 03/01/20 to 04/30/20 was obtained by subtracting value in 03/01/20 from 04/30/20.  Use death-case ratio formula to calculate this indicator. 
-New covid deaths during the second peak – 06/01/20 to 07/31/20 was obtained by subtracting value in 06/01/20 from 07/31/20. Use death-case ratio formula to calculate this indicator. 
-Death to Case Ratio = 
-(Number of New Deaths during a specified time period)/(Number of New Cases during that same time period)  x 100
 
 Log Transformation:
 Dependent variables were transformed (Log10) to address skewness.  Can be done on Excel or SPSS.
 
-D.  Datasets
+**D.  Datasets**
 Counties with no recorded coronavirus cases or deaths during the peak periods were removed. 
 Counties with death counts below 10 due to heart disease were removed. 
 Counties that recorded zero or unreliable numbers related to the other independent variables were removed.  
 Four datasets were compiled.  All datasets contained the same independent variables.  Dependent variable was unique to each dataset.  Size of dataset varied after data clean-up was completed. 
 
 
-Peak Period	Dependent Variable	Number of Observations
-Peak 1: 03/01/20 - 04/30/20	Incidence Rate	N = 2,807
-Peak 2: 06/01/20 - 07/31/20	Incidence Rate	N = 3,061
-Peak 1: 03/01/20 - 04/30/20	Death-Case Ratio	N = 1,445
-Peak 2: 06/01/20 - 07/31/20	Death-Case Ratio	N = 1,964
+Peak Period			Dependent Variable	Number of Observations
+Peak 1: 03/01/20 - 04/30/20	Incidence Rate		N = 2,807
+Peak 2: 06/01/20 - 07/31/20	Incidence Rate		N = 3,061
 
-E.  File Descriptions
+**E.  File Descriptions**
 Layer_IR1_1.shp: modified county-level shapefile of contiguous US - contains data for Incidence rate for Peak 1 (03/01/20 - 04/30/20) and all age cohort and comorbidity variables.  Number of observations (counties): 2807
 Layer_IR2_1.shp: modified county-level shapefile of contiguous US - contains data for Incidence Rate for Peak 2 (06/01/20 - 07/31/20) and all age cohort and comorbidity variables.  Number of observations (counties): 3061
 IR1_table.csv: CSV table containing Dependent Variable - Incidence rate for Peak 1 (03/01/20 - 04/30/20) and all age cohort and comorbidity variables.  Number of observations (counties): 2807
 IR2_table.csv: CSV table containing Dependent Variable - Incidence Rate for Peak 2 (06/01/20 - 07/31/20) and all age cohort and comorbidity variables.  Number of observations (counties): 3061
-Layer_DR1_1.shp: modified county-level shapefile of contiguous US - contains data for Death-Case Ratio for Peak 1 (03/01/20 - 04/30/20) and all age cohort and comorbidity variables.  Number of observations (counties): 1445
-Layer_DR2_1.shp: modified county-level shapefile of contiguous US - contains data for Death-Case Ratio for Peak 2 (06/01/20 - 07/31/20) and all age cohort and comorbidity variables.  Number of observations (counties): 1964
-DR1_table.csv:  CSV table containing Dependent Variable - Death-Case Ratio for Peak 1 (03/01/20 - 04/30/20) and all age cohort and comorbidity variables.  Number of observations (counties): 1445
-DR2_table.csv: CSV table containing Dependent Variable - Death-Case Ratio for Peak 2 (06/01/20 - 07/31/20) and all age cohort and comorbidity variables.  Number of observations (counties): 1964
 
-
-F.  Variable Descriptions
+**F.  Variable Descriptions**
 Dependent Variables: 
        IR1_log  -  Log transformed covid-19 incidence rates for peak period 1 (03/01/20 - 04/30/20)
        IR2_log  -  Log transformed covid-19 incidence rates for peak period 2 (06/01/20 - 07/31/20)
-	DR1_log  -  Log transformed covid-19 death-case ratios for peak period 1 (03/01/20 - 04/30/20)
-       DR2_log  -  Log transformed covid-19 death-case ratios for peak period 2 (06/01/20 - 07/31/20)
+	
 Predictors:
         PCT_50to74  - Percent population aged 50 - 74
         PCT_over75  - Percent population aged 75 and above
         DIAB_PCT  - Percent population diagnosed with diabetes
         CARDIO_MR  - Heart disease mortality rate – number of deaths per 100,000 of population
         OBESE_PCT  - Percent adult population with diagnosed obesity
+
 Geography/Geometry:
         X  -  X coordinate of geographic centroid of spatial feature (county) in meters
         Y  -  Y coordinate of geographic centroid of spatial feature (county) in meters
+
 Projection:
         USA Contiguous Equidistant Conic Projection
         Linear Unit: Meters
+
 Other Variables - not directly referenced in the code sample or not included in the analysis
         CTY_FIPS; countyFIPS  -  County Fips code
         CountyName  -  County name
@@ -106,15 +96,16 @@ Other Variables - not directly referenced in the code sample or not included in 
         Shape_Length - perimeter of polygon boundary of spatial feature (county) in meters
         Shape_Area - areal extent of polygon of spatial feature (county) in square meters
 
-G.  Software
+**G.  Software**
 ArcGIS Pro 2.5
 Jupyter Notebook
 PySAL – access sample code and definitions
 https://mgwr.readthedocs.io/en/latest/generated/mgwr.gwr.GWRResults.html#mgwr.gwr.GWRResults
  
-H.  OLS Regression
+**H. OLS Regression**
 Run OLS regression for each dataset with incidence rates and death-case ratios for each peak period as the dependent variable. 
 Code sample:
+![image](https://user-images.githubusercontent.com/73550457/135687577-3191ff71-3815-4ed1-a4ac-c6e67b061c4d.png)
  
 
 I.   GWR – model specification
