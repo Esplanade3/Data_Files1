@@ -159,6 +159,7 @@ Peak 2: 06/01/20 - 07/31/20	Incidence Rate		111
 
 
 Code sample for specifying the GWR model:
+
 ![image](https://user-images.githubusercontent.com/73550457/135687762-564e751e-c826-4db0-ac7a-8504325d0627.png)
  
 
