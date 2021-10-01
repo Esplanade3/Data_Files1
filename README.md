@@ -55,11 +55,11 @@ Counties that recorded zero or unreliable numbers related to the other independe
 Four datasets were compiled.  All datasets contained the same independent variables.  Dependent variable was unique to each dataset.  Size of dataset varied after data clean-up was completed. 
 
 
-Peak Period			Dependent Variable	Number of Observations
+Peak Period					Dependent Variable			Number of Observations
 
-Peak 1: 03/01/20 - 04/30/20	Incidence Rate		N = 2,807
+Peak 1: 03/01/20 - 04/30/20			Incidence Rate				N = 2,807
 
-Peak 2: 06/01/20 - 07/31/20	Incidence Rate		N = 3,061
+Peak 2: 06/01/20 - 07/31/20			Incidence Rate				N = 3,061
 
 **E.  File Descriptions**
 
@@ -132,6 +132,7 @@ https://mgwr.readthedocs.io/en/latest/generated/mgwr.gwr.GWRResults.html#mgwr.gw
 
 Run OLS regression for each dataset with incidence rates and death-case ratios for each peak period as the dependent variable. 
 Code sample:
+
 ![image](https://user-images.githubusercontent.com/73550457/135687577-3191ff71-3815-4ed1-a4ac-c6e67b061c4d.png)
  
 
@@ -144,6 +145,7 @@ Bandwidth:
 The golden section search method was used to identify the appropriate number of neighbors for each of the datasets based on the lowest AIC value.
 
 Code sample for testing suitable bandwidth:
+
 ![image](https://user-images.githubusercontent.com/73550457/135687714-c616ce47-fd71-4453-b55c-4d45442e31e6.png)
 
  
@@ -173,6 +175,7 @@ Example using IR1_log as the dependent variable (dataset 1):
 Example using IR1_log as the dependent variable (dataset 1).
 
 Code sample and results for model fit statistics:
+
 ![image](https://user-images.githubusercontent.com/73550457/135687878-cc8a5821-82f2-4ff4-b9cf-7380ae1064bd.png)
 
 
